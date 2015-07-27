@@ -514,7 +514,7 @@ NSTimer *durationTimer;
 - (void)addCustomView:(UIView *)view
 {
     // Update view height
-    self.windowHeight += view.frame.size.height;
+    self.windowHeight += view.frame.size.height + 10.0f;
     
     [_contentView addSubview:view];
     [_views addObject:view];
