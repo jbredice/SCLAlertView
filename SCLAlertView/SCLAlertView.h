@@ -75,6 +75,12 @@ typedef NS_ENUM(NSInteger, SCLAlertViewBackground)
     Transparent
 };
 
+/** Content View
+ *
+ * The content view of the pop up.
+ */
+@property (nonatomic, strong) UIView *contentView;
+
 /** Title Label
  *
  * The text displayed as title.
