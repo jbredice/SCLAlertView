@@ -25,6 +25,7 @@
 
 @property (nonatomic, strong) NSMutableArray *inputs;
 @property (nonatomic, strong) NSMutableArray *buttons;
+@property (nonatomic, strong) NSMutableArray *views;
 @property (nonatomic, strong) UIImageView *circleIconImageView;
 @property (nonatomic, strong) UIView *circleView;
 @property (nonatomic, strong) UIView *circleViewBackground;
@@ -124,6 +125,7 @@ NSTimer *durationTimer;
         _backgroundView = [[UIImageView alloc]initWithFrame:[self mainScreenFrame]];
         _buttons = [[NSMutableArray alloc] init];
         _inputs = [[NSMutableArray alloc] init];
+        _views = [[NSMutableArray alloc] init];
         
         // Add Subviews
         [self.view addSubview:_contentView];
@@ -296,6 +298,14 @@ NSTimer *durationTimer;
             textField.frame = CGRectMake(12.0f, y, _windowWidth - 24.0f, 30.0f);
             textField.layer.cornerRadius = 3.0f;
             y += 40.0f;
+        }
+        
+        // Views
+        for (UIView *view in _views)
+        {
+            view.frame = CGRectMake(12.0f, y, view.frame.size.width, view.frame.size.height);
+            view.layer.cornerRadius = 3.0f;
+            y += view.frame.size.height + 10.0f;
         }
         
         // Buttons
@@ -497,6 +507,17 @@ NSTimer *durationTimer;
         UITextField *priorField = _inputs[indexOfCurrentField - 1];
         priorField.returnKeyType = UIReturnKeyNext;
     }
+}
+
+#pragma mark - View
+
+- (void)addCustomView:(UIView *)view
+{
+    // Update view height
+    self.windowHeight += view.frame.size.height;
+    
+    [_contentView addSubview:view];
+    [_views addObject:view];
 }
 
 # pragma mark - UITextFieldDelegate

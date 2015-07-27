@@ -238,6 +238,12 @@ typedef NS_ENUM(NSInteger, SCLAlertViewBackground)
  */
 - (void)addCustomTextField:(UITextField *)textField;
 
+/** Add a custom View
+ *
+ * @param view The custom view provided by the programmer.
+ */
+- (void)addCustomView:(UIView *)view;
+
 /** Set SubTitle Height
  *
  * @deprecated Deprecated since 0.5.2+ .
