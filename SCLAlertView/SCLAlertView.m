@@ -48,8 +48,8 @@
 @property (nonatomic) CGFloat titleFontSize;
 @property (nonatomic) CGFloat bodyFontSize;
 @property (nonatomic) CGFloat buttonsFontSize;
-@property (nonatomic) CGFloat windowHeight;
-@property (nonatomic) CGFloat windowWidth;
+//@property (nonatomic) CGFloat windowHeight;
+//@property (nonatomic) CGFloat windowWidth;
 @property (nonatomic) CGFloat subTitleHeight;
 @property (nonatomic) CGFloat subTitleY;
 

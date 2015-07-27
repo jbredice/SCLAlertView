@@ -81,6 +81,18 @@ typedef NS_ENUM(NSInteger, SCLAlertViewBackground)
  */
 @property (nonatomic, strong) UIView *contentView;
 
+/** Window Height
+ *
+ * The height of the pop up.
+ */
+@property (nonatomic) CGFloat windowHeight;
+
+/** Window Width
+ *
+ * The width of the pop up.
+ */
+@property (nonatomic) CGFloat windowWidth;
+
 /** Title Label
  *
  * The text displayed as title.
